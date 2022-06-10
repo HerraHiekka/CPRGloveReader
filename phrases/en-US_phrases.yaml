@@ -1,0 +1,18 @@
+# Feedback for compression rate
+rateLow: Press faster
+rateHigh: Press slower
+
+# Feedback for compression depth
+depthLow: Press harder
+depthHigh: Press gentler
+
+# Feedback for lean/chest recoil
+noRecoil: Let the chest fully recoil
+
+# Feedback for interruption
+interrupted: Continue the compressions
+
+# Program feedback/errors/etc.
+missingSound: Missing sound file
+ready: Begin the compressions
+done: The session has finished

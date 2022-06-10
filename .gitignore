@@ -1,0 +1,14 @@
+# IDE files
+__pycache_
+.idea
+
+# External data
+recordings
+legacy files
+
+# Files produced upon running the program
+audio/*
+**.png
+
+# Related but not used files
+**.ipynb

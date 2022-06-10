@@ -1,0 +1,18 @@
+# Feedback for compression rate
+rateLow: Paina nopeammin
+rateHigh: Paina hitaammin
+
+# Feedback for compression depth
+depthLow: Paina voimakkaammin
+depthHigh: Paina kevyemmin
+
+# Feedback for lean/chest recoil
+noRecoil: Anna rinnan palautua kokonaan ylös
+
+# Feedback for interruption
+interrupted: Jatka painelua
+
+# Program feedback/errors/etc.
+missingSound: Puuttuva ääni
+ready: Aloita painelu
+done: Sessio on päättynyt

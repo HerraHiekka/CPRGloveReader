@@ -1,0 +1,19 @@
+# General settings
+locale: en-US
+feedback timer: 2.0 # This is the minumum time between two feedback statements
+initial timer: 5.0 # This is the time in the beginning of the program before feedback starts
+calibration: False # Toggles the feedback on or off
+session length: 60 # Adding this will end the recording after the provided number of seconds. Leaving it empty will not set maximum session time
+
+# Boundary values for CPR process in low-high order
+depth bounds: [2.5, 4.0] # In cm. Expectation is 5-6 cm, but because of the IMU(?) we only seem to get readings up to 4 cm
+frequency bounds: [100.0, 120.0] # In compressions per minute
+pressure th: 40.0 # Calibration value for the "no pressure" state in pressure sensors. Values *above* this are considered to be rest
+
+# Arduino Reader settings
+arduino:
+  cols: [time, press1, press2, press3, acc1, acc2, acc3, gyro1, gyro2, gyro3] # Column names of output data
+  port: /dev/ttyACM0 # USB port for the Arduino connection
+  baudrate: 9600 # Arduino baudrate
+  timeout: 1 # Timeout (seconds) for Arduino connection in case of no response
+
