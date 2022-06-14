@@ -18,13 +18,14 @@ from functools import reduce
 class CPRState:
 
     def __init__(self, save=None, config='./config.yaml'):
+        self.save = save
 
         print("Reading config")
         with open(config, 'r') as file:
             self.config = yaml.load(file, Loader=yaml.FullLoader)
 
         # Prepare for saving, if necessary
-        if save is not None:
+        if self.save is not None:
             # Append the time to the desired session name
             self.save = f"{save} - {int(time.time())}"
             os.mkdir(f"./recordings/{self.save}")

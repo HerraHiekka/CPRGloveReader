@@ -9,6 +9,7 @@ session length: 60 # Adding this will end the recording after the provided numbe
 depth bounds: [2.5, 4.0] # In cm. Expectation is 5-6 cm, but because of the IMU(?) we only seem to get readings up to 4 cm
 frequency bounds: [100.0, 120.0] # In compressions per minute
 pressure th: 40.0 # Calibration value for the "no pressure" state in pressure sensors. Values *above* this are considered to be rest
+list
 
 # Arduino Reader settings
 arduino:

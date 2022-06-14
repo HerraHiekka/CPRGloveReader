@@ -13,7 +13,7 @@ class Model:
 
     def __init__(self, freq_bounds=np.array([90,140]), depth_bounds=np.array([5.0, 6.0]), offset=4, eps=1.0, calibration=False):
         self.offset = offset
-        self.eps = eps
+        self.eps = eps # Pressure sensor threshold
         self.f_bounds = freq_bounds
         self.d_bounds = depth_bounds
         self.calibration = calibration
@@ -47,9 +47,6 @@ class Model:
         self.transition_f = self._get_transition_frequency(data)
         self.frequency = self._get_fft_frequency(self.acc)
 
-        # Finally, we obtain depth by first applying the double integration and then estimating the depth
-        vels, ds = self._transform(self.acc)
-
         # Check if the frequency is lower or higher than provided bounds
         low_freq = high_freq = False
         if self.frequency > self.f_bounds[1]:
@@ -60,10 +57,10 @@ class Model:
 
         # Finally, we obtain depth by first applying the double integration and then estimating the depth
         vels, ds = self._transform(self.acc)
+
         # And then finding the peak-to-peak depth
-
-
         self.depth = self._get_depth_from_diffs(ds)
+
         # Check That the depth is within appropriate bounds
         if np.all(self.depth < self.d_bounds[0]):
             return State.LOW_DEPTH
